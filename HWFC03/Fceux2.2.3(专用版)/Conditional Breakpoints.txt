@@ -1,0 +1,39 @@
+Breakpoints may also have a conditional statement that causes them to execute only if that statement evaluates to true. The conditional breakpoint grammar has this form:
+
+Connect   -> Compare { ('||' | '&&') Compare } # V8 y5 p, S( Q8 G- b4 J- O
+Compare   -> Sum { ('==' | '!=' | '<=' | '>=' | '<' | '>') Sum } 5 P. G, X9 K0 s9 @. |
+Sum       -> Product { ('+' | '-') Product } 
+Product   -> Primitive { ('*' | '/') Primitive } & `# e9 @: `4 R( b1 q( w
+Primitive -> Number | Address | Register | Flag | PC Bank | Data Bank | '(' Connect ')' & `6 s0 [# p) _5 Y- u' m
+Number    -> '#' [0123456789ABCDEF]* " I* `$ v) w* U% A4 ?* s
+Address   -> '$' [0123456789ABCDEF]* | '$' '[' Connect ']' 
+Register  -> 'A' | 'X' | 'Y' | 'P' 4 c6 F0 Z+ B& C. v, C, U: |
+Flag      -> 'N' | 'C' | 'Z' | 'I' | 'B' | 'V' , W2 Y: r$ p. u$ d3 F8 `- C
+PC Bank   -> 'K' 9 O! d( P4 }3 r; P" v! u( W) n
+Data Bank   -> 'T' 
+/ g4 G( p6 ^8 C& E* W1 N* K4 K
+The parser is very strict. All numbers are hexadecimal. Always prefix a number with # for an immediate value, or $ for a memory address. If a memory address needs to be calculated use $[] with the calculation inside the brackets.
+
+Registers A/X/Y are 8-bit unsigned values. Register P is the 16-bit program counter.
+
+Flags evaluate to 1 if set, 0 if clear.
+7 m. q( k* B! T& E1 B1 d( y
+Connecting operators || or && combine boolean terms. Parentheses dictate order of operations.
+
+Example conditions:
+" U* k  C3 y1 A; Q5 f/ g
+Break only if register A is less than value at memory address $0005:: g, T+ P  e* C( T! l. {
++ ^- G5 ^9 e) ^8 p
+A < $0005
+
+Break only if the value at the indirect address is not equal to FF:: }; U' y& L# F5 h4 [5 k9 e
+
+#FF != $[$10+($11*#100)]
+) i& a7 K  b: `
+Break only if flag N is clear or A is not equal to 00:
+. _9 T, g' w8 t% C+ v
+(N==#0 || A!=#0)
+
+Break only when accessing a data from bank 2 (the condiition is relevant when using with Read/Write-type breakpoints):
+
+T==#2

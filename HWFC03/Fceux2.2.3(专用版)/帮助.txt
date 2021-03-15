@@ -1,0 +1,15 @@
+Breakpoints may also have a conditional statement that causes them to execute only if that statement evaluates to true. The conditional breakpoint grammar has this form:
+
+Connect -> Compare { ('||' | '&&') Compare } 
+Compare -> Sum { ('==' | '!=' | '<=' | '>=' | '<' | '>') Sum } ; f2 u0 \) y! b' ?k# B, c" X
+Sum -> Product { ('+' | '-') Product } 
+Product -> Primitive { ('*' | '/') Primitive } # m, y9 l! P9 g
+Primitive -> Number | Address | Register | Flag | PC Bank | Data Bank | '(' Connect ')' 
+Number -> '#' [0123456789ABCDEF]* 7 y" N1 _4 [% t
+Address -> '$' [0123456789ABCDEF]* | '$' '[' Connect ']' 
+Register-> 'A' | 'X' | 'Y' | 'P' $ e8 U% a3 L! H5 {6 v- S5 i! @
+Flag -> 'N' | 'C' | 'Z' | 'I' | 'B' | 'V' 
+PC Bank -> 'K' 
+Data Bank -> 'T' 
+
+The parser is very strict. All numbers are hexadecimal. Always prefix a number with # for an immediate value, or $ for a memory address. If a memory address needs.

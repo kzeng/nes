@@ -1,0 +1,257 @@
+;-------------------------------------------------------------------------------
+Name_001:
+        DB      'CONTRA JPN 30P',$00
+Name_002:
+        DB      'SUPER CONTRA 30P',$00
+Name_003:
+        DB      'CONTRA FORCE',$00
+Name_004:
+        DB      'LIFE FORCE',$00
+Name_005:
+        DB      'JACKAL',$00
+Name_006:
+        DB      'RUSH N ATTACK',$00
+Name_007:
+        DB      'GUN SMOKE',$00
+Name_008:
+        DB      '1944',$00
+Name_009:
+        DB      'WORLD CUP SOCCER',$00
+Name_010:
+        DB      'SIDE POCKET',$00
+Name_011:
+        DB      'SILK WORM',$00
+Name_012:
+        DB      'DOUBLE DRAGON 1',$00
+Name_013:
+        DB      'DOUBLE DRAGON 2',$00
+Name_014:
+        DB      'DOUBLE DRAGON 3',$00
+Name_015:
+        DB      'DOUBLE DRAGON 4',$00
+Name_016:
+        DB      'NINJA RYUKENDEN 1',$00
+Name_017:
+        DB      'NINJA RYUKENDEN 2',$00
+Name_018:
+        DB      'NINJA RYUKENDEN 3',$00
+Name_019:
+        DB      'ADVENTURE ISLAND 1',$00
+Name_020:
+        DB      'ADVENTURE ISLAND 2',$00
+Name_021:
+        DB      'ADVENTURE ISLAND 3',$00
+Name_022:
+        DB      'ADVENTURE ISLAND 4',$00
+Name_023:
+        DB      'NINJA TURTLES 1',$00
+Name_024:
+        DB      'NINJA TURTLES 2',$00
+Name_025:
+        DB      'NINJA TURTLES 3',$00
+Name_026:
+        DB      'NINJA TURTLES 4',$00
+Name_027:
+        DB      'BATMAN 1',$00
+Name_028:
+        DB      'BATMAN 2',$00
+Name_029:
+        DB      'BATMAN 3',$00
+Name_030:
+        DB      'ROCKMAN 1',$00
+Name_031:
+        DB      'ROCKMAN 2',$00
+Name_032:
+        DB      'ROCKMAN 3',$00
+Name_033:
+        DB      'ROCKMAN 4',$00
+Name_034:
+        DB      'ROCKMAN 5',$00
+Name_035:
+        DB      'ROCKMAN 6',$00
+Name_036:
+        DB      'NEKKETSU STREET BASKET',$00
+Name_037:
+        DB      'NEKKETSU SHIN KIROKU',$00
+Name_038:
+        DB      'NEKKETSU KOUKOU DODGEBALL',$00
+Name_039:
+        DB      'NEKKETSU KAKUTOU DENSETSU',$00
+Name_040:
+        DB      'NEKKETSU MONOGATARI',$00
+Name_041:
+        DB      'NEKKETSU SOCCER HEN',$00
+Name_042:
+        DB      'NEKKETSU SOCCER LEAGUE',$00
+Name_043:
+        DB      'NEKKETSU KOUSHINKYOKU',$00
+Name_044:
+        DB      'NEKKETSU HOCKEY',$00
+Name_045:
+        DB      'NEKKETSU KOUHA KUNIO',$00
+Name_046:
+        DB      'SUPER MARIO',$00
+Name_047:
+        DB      'MARIO BROS 2',$00
+Name_048:
+        DB      'MARIO BROS 3',$00
+Name_049:
+        DB      'NINJA GAIDEN 1',$00
+Name_050:
+        DB      'NINJA GAIDEN 2',$00
+Name_051:
+        DB      'NINJA GAIDEN 3',$00
+Name_052:
+        DB      'CASTLEVANIA 1',$00
+Name_053:
+        DB      'CASTLEVANIA 2',$00
+Name_054:
+        DB      'P O W',$00
+Name_055:
+        DB      'CROSS FIRE',$00
+Name_056:
+        DB      'MITSUME GA TOORU',$00
+Name_057:
+        DB      'CHIP N DALE 1',$00
+Name_058:
+        DB      'CHIP N DALE 2',$00
+Name_059:
+        DB      'JACKIE CHAN',$00
+Name_060:
+        DB      'SNOW BROS',$00
+Name_061:
+        DB      'SAIYUUKI WORLD 1',$00
+Name_062:
+        DB      'CAT NINDEN TEYANDEE',$00
+Name_063:
+        DB      'MIGHTY FINAL FIGHT',$00
+Name_064:
+        DB      'CAPTAIN AMERICA',$00
+Name_065:
+        DB      'CAPTAIN TSUBASA 1',$00
+Name_066:
+        DB      'CAPTAIN TSUBASA 2',$00
+Name_067:
+        DB      'ADVENTURES OF BAYOU BILLY',$00
+Name_068:
+        DB      'KAGE',$00
+Name_069:
+        DB      'KICK MASTER',$00
+Name_070:
+        DB      'IKARI 1',$00
+Name_071:
+        DB      'IKARI 2',$00
+Name_072:
+        DB      'IKARI 3',$00
+Name_073:
+        DB      'FINAL MISSION',$00
+Name_074:
+        DB      'GUERRILLA WAR',$00
+Name_075:
+        DB      'GUN DEC',$00
+Name_076:
+        DB      'ROBOCOP 1',$00
+Name_077:
+        DB      'ROBOCOP 2',$00
+Name_078:
+        DB      'ROBOCOP 3',$00
+Name_079:
+        DB      'ROBOCOP 4',$00
+Name_080:
+        DB      'CODE NAME VIPER',$00
+Name_081:
+        DB      'DARKWING DUCK',$00
+Name_082:
+        DB      'DRAGON FIGHTER',$00
+Name_083:
+        DB      'ARGOS NO SENSHI',$00
+Name_084:
+        DB      'G I JOE 1',$00
+Name_085:
+        DB      'G I JOE 2',$00
+Name_086:
+        DB      'SWORD MASTER',$00
+Name_087:
+        DB      'TINY TOON 1',$00
+Name_088:
+        DB      'TINY TOON 2',$00
+Name_089:
+        DB      'TINY TOON 3',$00
+Name_090:
+        DB      'TINY TOON 4',$00
+Name_091:
+        DB      'TINY TOON 5',$00
+Name_092:
+        DB      'TOKKYUU SHIREI',$00
+Name_093:
+        DB      'PAJAMA HERO',$00
+Name_094:
+        DB      'PARODIUS',$00
+Name_095:
+        DB      'POWER BLADE 1',$00
+Name_096:
+        DB      'POWER BLADE 2',$00
+Name_097:
+        DB      'ASTYANAX',$00
+Name_098:
+        DB      'BATTLE KID 1',$00
+Name_099:
+        DB      'BATTLE KID 2',$00
+Name_100:
+        DB      'FELIX THE CAT',$00
+Name_101:
+        DB      'HEAVY BARREL',$00
+Name_102:
+        DB      'BUCKY O HARE',$00
+Name_103:
+        DB      'MONSTER',$00
+Name_104:
+        DB      'NINJA CRUSADERS',$00
+Name_105:
+        DB      'ULTRAMAN CLUB',$00
+Name_106:
+        DB      'SEIREI DENSETSU LICKLE',$00
+Name_107:
+        DB      'ROCK BOARD',$00
+Name_108:
+        DB      'TOP SECRET',$00
+Name_109:
+        DB      'THE SUPER SHINOBI',$00
+Name_110:
+        DB      'BAD DUDES',$00
+Name_111:
+        DB      'GOLD MEDAL',$00
+Name_112:
+        DB      'LEGENDARY WINGS',$00
+Name_113:
+        DB      'GREMLINS 2',$00
+Name_114:
+        DB      'JURASSIC PARK',$00
+Name_115:
+        DB      'MATENDOUJI',$00
+Name_116:
+        DB      'THUNDERCADE',$00
+Name_117:
+        DB      'METAL STORM',$00
+Name_118:
+        DB      'NINJA BROTHERS',$00
+Name_119:
+        DB      'OVER HORIZON',$00
+Name_120:
+        DB      'ZANAC',$00
+Name_121:
+        DB      'FLINTSTONES 1',$00
+Name_122:
+        DB      'FLINTSTONES 2',$00
+Name_123:
+        DB      'TERMINATOR 1',$00
+Name_124:
+        DB      'TERMINATOR 2',$00
+Name_125:
+        DB      'SILVER SURFER',$00
+Name_126:
+        DB      'TRACK AND FIELD',$00
+Name_127:
+        DB      'SPARTAN X',$00
+Name_128:
+        DB      '  ',$00
