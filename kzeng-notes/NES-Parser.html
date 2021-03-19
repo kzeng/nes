@@ -13158,7 +13158,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[151]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 分析 .NES 文件格式</span>
@@ -13246,7 +13246,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[143]:</div>
+    <div class="prompt output_prompt">Out[151]:</div>
 
 
 
@@ -13272,7 +13272,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[159]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 自动生成有列表电子表格文件</span>
@@ -13287,7 +13287,7 @@ div#notebook {
 
 <span class="n">nes_files_dir</span> <span class="o">=</span> <span class="s1">&#39;./128in1/&#39;</span>
 <span class="c1"># nes_games_list = &#39;Nes-Games-List-&#39; + str(time.time()) + &#39;.xlsx&#39;</span>
-<span class="n">nes_games_list</span> <span class="o">=</span> <span class="s1">&#39;Nes-Games-List-&#39;</span> <span class="o">+</span> <span class="s1">&#39;.xlsx&#39;</span>
+<span class="n">nes_games_list</span> <span class="o">=</span> <span class="s1">&#39;Nes-Games-List&#39;</span> <span class="o">+</span> <span class="s1">&#39;.xlsx&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start create &#39;</span> <span class="o">+</span> <span class="n">nes_games_list</span> <span class="o">+</span> <span class="s1">&#39;...&#39;</span><span class="p">)</span>
 
@@ -13306,7 +13306,7 @@ div#notebook {
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nes_games_list</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Create &#39;</span> <span class="o">+</span> <span class="n">nes_games_list</span> <span class="o">+</span> <span class="s1">&#39;Ok!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Create &#39;</span> <span class="o">+</span> <span class="n">nes_games_list</span> <span class="o">+</span> <span class="s1">&#39; Ok!&#39;</span><span class="p">)</span>
         
 </pre></div>
 
@@ -13324,8 +13324,8 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Start create Nes-Games-List-.xlsx...
-Create Nes-Games-List-.xlsxOk!
+<pre>Start create Nes-Games-List.xlsx...
+Create Nes-Games-List.xlsx Ok!
 </pre>
 </div>
 </div>
@@ -13336,7 +13336,7 @@ Create Nes-Games-List-.xlsxOk!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[145]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## 生成 .IDX 文件优化版本</span>
@@ -13406,7 +13406,7 @@ Create Nes-Games-List-.xlsxOk!
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;F_Reset.bin </span><span class="se">\t</span><span class="s2"> 0000000 </span><span class="se">\t</span><span class="s2"> 007E000 </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># F_reset.bin之后一段</span>
-<span class="n">rom_size_sum1</span> <span class="o">=</span> <span class="n">F_reset_addr</span> <span class="o">+</span> <span class="mi">8</span> <span class="c1">#F_re</span>
+<span class="n">rom_size_sum1</span> <span class="o">=</span> <span class="n">F_reset_addr</span> <span class="o">+</span> <span class="mi">8</span> <span class="c1">#F_reset.bin size 8k ???</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">nes_files_dict_sorted</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">pick_nes_files</span><span class="p">:</span>
@@ -13423,7 +13423,7 @@ Create Nes-Games-List-.xlsxOk!
 <span class="c1"># show created .idx content</span>
 <span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">idx_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f1</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;生成 &#39;</span> <span class="o">+</span> <span class="n">idx_file</span> <span class="o">+</span> <span class="s1">&#39; Ok!&#39;</span><span class="p">)</span>
@@ -13447,277 +13447,141 @@ Create Nes-Games-List-.xlsxOk!
 {&#39;AIsland4.nes&#39;: 384, &#39;AIsland1.nes&#39;: 64, &#39;Dr_Mario.nes&#39;: 56}
 开始安放nes文件到 .IDX 文件...
 AIsland4.nes 	 0000010 	 0000000 
-
 AIsland1.nes 	 0000010 	 0180000 
-
 Dr_Mario.nes 	 0000010 	 02D0000 
-
 F_Reset.bin 	 0000000 	 007E000 
-
 BattKid2.nes 	 0000010 	 0080040 
-
 LionKin3.nes 	 0000010 	 0100040 
-
 Rockman4.nes 	 0000010 	 0180040 
-
 Rockman5.nes 	 0000010 	 0200040 
-
 Rockman6.nes 	 0000010 	 0280040 
-
 SpShinob.nes 	 0000010 	 0300040 
-
 TinyTon6.nes 	 0000010 	 0380040 
-
 Turtles2.nes 	 0000010 	 0400040 
-
 Turtles3.nes 	 0000010 	 0480040 
-
 Batman2.nes 	 0000010 	 04E0040 
-
 Batman3.nes 	 0000010 	 0540040 
-
 Flintst1.nes 	 0000010 	 05A0040 
-
 Flintst2.nes 	 0000010 	 0600040 
-
 Gremlins.nes 	 0000010 	 0660040 
-
 G_I_Joe1.nes 	 0000010 	 06C0040 
-
 G_I_Joe2.nes 	 0000010 	 0720040 
-
 MetalStm.nes 	 0000010 	 0780040 
-
 Rockman3.nes 	 0000010 	 07E0040 
-
 SeireiDL.nes 	 0000010 	 0840040 
-
 SilverSu.nes 	 0000010 	 08A0040 
-
 SpMario3.nes 	 0000010 	 0900040 
-
 Tsubasa2.nes 	 0000010 	 0960040 
-
 Ultraman.nes 	 0000010 	 09C0040 
-
 AIsland2.nes 	 0000010 	 0A00040 
-
 AIsland3.nes 	 0000010 	 0A40040 
-
 astyanax.nes 	 0000010 	 0A80040 
-
 BadDudes.nes 	 0000010 	 0AC0040 
-
 Batman1.nes 	 0000010 	 0B00040 
-
 BattKid1.nes 	 0000010 	 0B40040 
-
 Bayoubil.nes 	 0000010 	 0B80040 
-
 BuckyOHa.nes 	 0000010 	 0BC0040 
-
 CaptAmer.nes 	 0000010 	 0C00040 
-
 Castlev2.nes 	 0000010 	 0C40040 
-
 Chipdal1.nes 	 0000010 	 0C80040 
-
 Chipdal2.nes 	 0000010 	 0CC0040 
-
 Chipdal3.nes 	 0000010 	 0D00040 
-
 CodViper.nes 	 0000010 	 0D40040 
-
 Contra1J.NES 	 0000010 	 0D80040 
-
 Contra2J.NES 	 0000010 	 0DC0040 
-
 Contra_F.nes 	 0000010 	 0E00040 
-
 CrosFire.nes 	 0000010 	 0E40040 
-
 DarkDuck.nes 	 0000010 	 0E80040 
-
 DbDragn1.nes 	 0000010 	 0EC0040 
-
 DbDragn2.nes 	 0000010 	 0F00040 
-
 DbDragn3.nes 	 0000010 	 0F40040 
-
 DbDragn4.nes 	 0000010 	 0F80040 
-
 DragFigh.nes 	 0000010 	 0FC0040 
-
 Felixcat.nes 	 0000010 	 1000040 
-
 FMission.nes 	 0000010 	 1040040 
-
 GoldMedl.nes 	 0000010 	 1080040 
-
 Guerrill.nes 	 0000010 	 10C0040 
-
 Gun_Dec.nes 	 0000010 	 1100040 
-
 HeavyBar.nes 	 0000010 	 1140040 
-
 Ikari_2.nes 	 0000010 	 1180040 
-
 Ikari_3.nes 	 0000010 	 11C0040 
-
 Jackchan.nes 	 0000010 	 1200040 
-
 Jurassic.nes 	 0000010 	 1240040 
-
 Kage.nes 	 0000010 	 1280040 
-
 KickMast.nes 	 0000010 	 12C0040 
-
 Matendou.nes 	 0000010 	 1300040 
-
 Mightyff.nes 	 0000010 	 1340040 
-
 Mitsume.nes 	 0000010 	 1380040 
-
 Monster.nes 	 0000010 	 13C0040 
-
 NekBaskt.nes 	 0000010 	 1400040 
-
 NekDodge.nes 	 0000010 	 1440040 
-
 NekHocky.nes 	 0000010 	 1480040 
-
 NekKakut.nes 	 0000010 	 14C0040 
-
 NekKoush.nes 	 0000010 	 1500040 
-
 NekMonog.nes 	 0000010 	 1540040 
-
 NekShink.nes 	 0000010 	 1580040 
-
 NekSocer.nes 	 0000010 	 15C0040 
-
 NekSocLg.nes 	 0000010 	 1600040 
-
 NGaiden1.nes 	 0000010 	 1640040 
-
 NGaiden2.nes 	 0000010 	 1680040 
-
 NGaiden3.nes 	 0000010 	 16C0040 
-
 NinjaCat.nes 	 0000010 	 1700040 
-
 NinjBros.nes 	 0000010 	 1740040 
-
 OverHori.nes 	 0000010 	 1780040 
-
 PajamaHe.nes 	 0000010 	 17C0040 
-
 Parodius.nes 	 0000010 	 1800040 
-
 Pokemon.nes 	 0000010 	 1840040 
-
 PwBlade1.nes 	 0000010 	 1880040 
-
 PwBlade2.nes 	 0000010 	 18C0040 
-
 P_O_W.nes 	 0000010 	 1900040 
-
 Robocop1.nes 	 0000010 	 1940040 
-
 Robocop2.nes 	 0000010 	 1980040 
-
 Robocop3.nes 	 0000010 	 19C0040 
-
 Robocop4.nes 	 0000010 	 1A00040 
-
 RockBord.nes 	 0000010 	 1A40040 
-
 Rockman2.nes 	 0000010 	 1A80040 
-
 Saiyuuk2.nes 	 0000010 	 1AC0040 
-
 SilkWorm.nes 	 0000010 	 1B00040 
-
 SnowBros.nes 	 0000010 	 1B40040 
-
 Spartan2.nes 	 0000010 	 1B80040 
-
 SpMario2.nes 	 0000010 	 1BC0040 
-
 SwordMst.nes 	 0000010 	 1C00040 
-
 Termina1.nes 	 0000010 	 1C40040 
-
 Termina2.nes 	 0000010 	 1C80040 
-
 TinyTon1.nes 	 0000010 	 1CC0040 
-
 TinyTon2.nes 	 0000010 	 1D00040 
-
 TinyTon4.nes 	 0000010 	 1D40040 
-
 TinyTon5.nes 	 0000010 	 1D80040 
-
 TokkShir.nes 	 0000010 	 1DC0040 
-
 TopSecrt.nes 	 0000010 	 1E00040 
-
 Tsubasa1.nes 	 0000010 	 1E40040 
-
 Turtles1.nes 	 0000010 	 1E80040 
-
 Turtles4.nes 	 0000010 	 1EC0040 
-
 WaiWorld.nes 	 0000010 	 1F00040 
-
 1943.nes 	 0000010 	 1F20040 
-
 1944.nes 	 0000010 	 1F40040 
-
 Argos.nes 	 0000010 	 1F60040 
-
 Castlev1.nes 	 0000010 	 1F80040 
-
 Crusader.nes 	 0000010 	 1FA0040 
-
 Gunsmoke.nes 	 0000010 	 1FC0040 
-
 Ikari_1.nes 	 0000010 	 1FE0040 
-
 Jackal.nes 	 0000010 	 2000040 
-
 LegWings.nes 	 0000010 	 2020040 
-
 LifeForc.nes 	 0000010 	 2040040 
-
 NekKunio.nes 	 0000010 	 2060040 
-
 Rockman1.nes 	 0000010 	 2080040 
-
 Rushnatt.nes 	 0000010 	 20A0040 
-
 Saiyuuk1.nes 	 0000010 	 20C0040 
-
 SidePckt.nes 	 0000010 	 20E0040 
-
 Thuncade.nes 	 0000010 	 2100040 
-
 TinyTon3.nes 	 0000010 	 2120040 
-
 Worldcup.nes 	 0000010 	 2140040 
-
 Zanac_m4.nes 	 0000010 	 2160040 
-
 Saiyuuki.nes 	 0000010 	 2170040 
-
 Trckfild.nes 	 0000010 	 2180040 
-
 MarioBrs.nes 	 0000010 	 218A040 
-
 SpartanX.nes 	 0000010 	 2194040 
-
 SpMario1.nes 	 0000010 	 219E040 
-
 生成 ./Testnes1.idx Ok!
 </pre>
 </div>
@@ -13729,7 +13593,7 @@ SpMario1.nes 	 0000010 	 219E040
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[163]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ----------------------------------------------------------------------------------------------</span>
@@ -13827,7 +13691,8 @@ SpMario1.nes 	 0000010 	 219E040
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;; 文件名:</span><span class="si">{}</span><span class="se">\t</span><span class="s2"> 中文名:</span><span class="si">{}</span><span class="se">\t</span><span class="s2"> 版本:</span><span class="si">{}</span><span class="se">\t</span><span class="s2"> 有无预置:</span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;???&#39;</span><span class="p">,</span> <span class="s1">&#39;???&#39;</span><span class="p">,</span> <span class="s1">&#39;???&#39;</span><span class="p">))</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;;-------------------------------------------------------------------------------&#39;</span><span class="p">))</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Game_&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">))</span>        
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">SetupGame</span><span class="se">\t</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="s1">&#39;$&#39;</span><span class="o">+</span> <span class="n">idx_dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="s1">&#39;P&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;???&#39;</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;???&#39;</span> <span class="p">))</span>
+    <span class="n">chr_addr</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{:07x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span><span class="o">+</span><span class="n">idx_dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">*</span><span class="mi">16</span><span class="o">*</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">SetupGame</span><span class="se">\t</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="s1">&#39;$&#39;</span><span class="o">+</span> <span class="n">idx_dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">],</span> <span class="s1">&#39;P&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;$&#39;</span><span class="o">+</span><span class="n">chr_addr</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s1">&#39;???&#39;</span> <span class="p">))</span>
     <span class="c1">#f.write(&quot;\t\t\tdw\tGame{}_Set\n&quot;.format( str(row[0].value).zfill(3) ))</span>
 
 
@@ -13839,7 +13704,7 @@ SpMario1.nes 	 0000010 	 219E040
 <span class="c1"># show created F_Reset_Section content</span>
 <span class="n">f2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">F_Reset_Section</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">f2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
@@ -13861,2443 +13726,1224 @@ SpMario1.nes 	 0000010 	 219E040
 生成 F_Reset.asm中的代码片段：./F_Reset_Section.asm Ok!
 以下为F_Reset.asm中的代码片段：
 A_NameTbl: 
-
                 DW      Name_001
-
                 DW      Name_002
-
                 DW      Name_003
-
                 DW      Name_004
-
                 DW      Name_005
-
                 DW      Name_006
-
                 DW      Name_007
-
                 DW      Name_008
-
                 DW      Name_009
-
                 DW      Name_010
-
                 DW      Name_011
-
                 DW      Name_012
-
                 DW      Name_013
-
                 DW      Name_014
-
                 DW      Name_015
-
                 DW      Name_016
-
                 DW      Name_017
-
                 DW      Name_018
-
                 DW      Name_019
-
                 DW      Name_020
-
                 DW      Name_021
-
                 DW      Name_022
-
                 DW      Name_023
-
                 DW      Name_024
-
                 DW      Name_025
-
                 DW      Name_026
-
                 DW      Name_027
-
                 DW      Name_028
-
                 DW      Name_029
-
                 DW      Name_030
-
                 DW      Name_031
-
                 DW      Name_032
-
                 DW      Name_033
-
                 DW      Name_034
-
                 DW      Name_035
-
                 DW      Name_036
-
                 DW      Name_037
-
                 DW      Name_038
-
                 DW      Name_039
-
                 DW      Name_040
-
                 DW      Name_041
-
                 DW      Name_042
-
                 DW      Name_043
-
                 DW      Name_044
-
                 DW      Name_045
-
                 DW      Name_046
-
                 DW      Name_047
-
                 DW      Name_048
-
                 DW      Name_049
-
                 DW      Name_050
-
                 DW      Name_051
-
                 DW      Name_052
-
                 DW      Name_053
-
                 DW      Name_054
-
                 DW      Name_055
-
                 DW      Name_056
-
                 DW      Name_057
-
                 DW      Name_058
-
                 DW      Name_059
-
                 DW      Name_060
-
                 DW      Name_061
-
                 DW      Name_062
-
                 DW      Name_063
-
                 DW      Name_064
-
                 DW      Name_065
-
                 DW      Name_066
-
                 DW      Name_067
-
                 DW      Name_068
-
                 DW      Name_069
-
                 DW      Name_070
-
                 DW      Name_071
-
                 DW      Name_072
-
                 DW      Name_073
-
                 DW      Name_074
-
                 DW      Name_075
-
                 DW      Name_076
-
                 DW      Name_077
-
                 DW      Name_078
-
                 DW      Name_079
-
                 DW      Name_080
-
                 DW      Name_081
-
                 DW      Name_082
-
                 DW      Name_083
-
                 DW      Name_084
-
                 DW      Name_085
-
                 DW      Name_086
-
                 DW      Name_087
-
                 DW      Name_088
-
                 DW      Name_089
-
                 DW      Name_090
-
                 DW      Name_091
-
                 DW      Name_092
-
                 DW      Name_093
-
                 DW      Name_094
-
                 DW      Name_095
-
                 DW      Name_096
-
                 DW      Name_097
-
                 DW      Name_098
-
                 DW      Name_099
-
                 DW      Name_100
-
                 DW      Name_101
-
                 DW      Name_102
-
                 DW      Name_103
-
                 DW      Name_104
-
                 DW      Name_105
-
                 DW      Name_106
-
                 DW      Name_107
-
                 DW      Name_108
-
                 DW      Name_109
-
                 DW      Name_110
-
                 DW      Name_111
-
                 DW      Name_112
-
                 DW      Name_113
-
                 DW      Name_114
-
                 DW      Name_115
-
                 DW      Name_116
-
                 DW      Name_117
-
                 DW      Name_118
-
                 DW      Name_119
-
                 DW      Name_120
-
                 DW      Name_121
-
                 DW      Name_122
-
                 DW      Name_123
-
                 DW      Name_124
-
                 DW      Name_125
-
                 DW      Name_126
-
                 DW      Name_127
-
                 DW      Name_128
-
                 DW      Name_129
-
                 DW      Name_130
-
                 DW      Name_131
-
                 DW      Name_132
-
                 DW      Name_133
-
                 DW      Name_134
-
                 DW      Name_135
-
 ;------------------------------------------------------------------------------- 
-
 Name_001
-
         DB      &#39;1943&#39;,$00
-
 Name_002
-
         DB      &#39;1944&#39;,$00
-
 Name_003
-
         DB      &#39;AISLAND1&#39;,$00
-
 Name_004
-
         DB      &#39;AISLAND2&#39;,$00
-
 Name_005
-
         DB      &#39;AISLAND3&#39;,$00
-
 Name_006
-
         DB      &#39;AISLAND4&#39;,$00
-
 Name_007
-
         DB      &#39;ARGOS&#39;,$00
-
 Name_008
-
         DB      &#39;ASTYANAX&#39;,$00
-
 Name_009
-
         DB      &#39;BADDUDES&#39;,$00
-
 Name_010
-
         DB      &#39;BATMAN1&#39;,$00
-
 Name_011
-
         DB      &#39;BATMAN2&#39;,$00
-
 Name_012
-
         DB      &#39;BATMAN3&#39;,$00
-
 Name_013
-
         DB      &#39;BATTKID1&#39;,$00
-
 Name_014
-
         DB      &#39;BATTKID2&#39;,$00
-
 Name_015
-
         DB      &#39;BAYOUBIL&#39;,$00
-
 Name_016
-
         DB      &#39;BUCKYOHA&#39;,$00
-
 Name_017
-
         DB      &#39;CAPTAMER&#39;,$00
-
 Name_018
-
         DB      &#39;CASTLEV1&#39;,$00
-
 Name_019
-
         DB      &#39;CASTLEV2&#39;,$00
-
 Name_020
-
         DB      &#39;CHIPDAL1&#39;,$00
-
 Name_021
-
         DB      &#39;CHIPDAL2&#39;,$00
-
 Name_022
-
         DB      &#39;CHIPDAL3&#39;,$00
-
 Name_023
-
         DB      &#39;CODVIPER&#39;,$00
-
 Name_024
-
         DB      &#39;CONTRA1J&#39;,$00
-
 Name_025
-
         DB      &#39;CONTRA2J&#39;,$00
-
 Name_026
-
         DB      &#39;CONTRA F&#39;,$00
-
 Name_027
-
         DB      &#39;CROSFIRE&#39;,$00
-
 Name_028
-
         DB      &#39;CRUSADER&#39;,$00
-
 Name_029
-
         DB      &#39;DARKDUCK&#39;,$00
-
 Name_030
-
         DB      &#39;DBDRAGN1&#39;,$00
-
 Name_031
-
         DB      &#39;DBDRAGN2&#39;,$00
-
 Name_032
-
         DB      &#39;DBDRAGN3&#39;,$00
-
 Name_033
-
         DB      &#39;DBDRAGN4&#39;,$00
-
 Name_034
-
         DB      &#39;DRAGFIGH&#39;,$00
-
 Name_035
-
         DB      &#39;DR MARIO&#39;,$00
-
 Name_036
-
         DB      &#39;FELIXCAT&#39;,$00
-
 Name_037
-
         DB      &#39;FLINTST1&#39;,$00
-
 Name_038
-
         DB      &#39;FLINTST2&#39;,$00
-
 Name_039
-
         DB      &#39;FMISSION&#39;,$00
-
 Name_040
-
         DB      &#39;GOLDMEDL&#39;,$00
-
 Name_041
-
         DB      &#39;GREMLINS&#39;,$00
-
 Name_042
-
         DB      &#39;GUERRILL&#39;,$00
-
 Name_043
-
         DB      &#39;GUNSMOKE&#39;,$00
-
 Name_044
-
         DB      &#39;GUN DEC&#39;,$00
-
 Name_045
-
         DB      &#39;G I JOE1&#39;,$00
-
 Name_046
-
         DB      &#39;G I JOE2&#39;,$00
-
 Name_047
-
         DB      &#39;HEAVYBAR&#39;,$00
-
 Name_048
-
         DB      &#39;IKARI 1&#39;,$00
-
 Name_049
-
         DB      &#39;IKARI 2&#39;,$00
-
 Name_050
-
         DB      &#39;IKARI 3&#39;,$00
-
 Name_051
-
         DB      &#39;JACKAL&#39;,$00
-
 Name_052
-
         DB      &#39;JACKCHAN&#39;,$00
-
 Name_053
-
         DB      &#39;JURASSIC&#39;,$00
-
 Name_054
-
         DB      &#39;KAGE&#39;,$00
-
 Name_055
-
         DB      &#39;KICKMAST&#39;,$00
-
 Name_056
-
         DB      &#39;LEGWINGS&#39;,$00
-
 Name_057
-
         DB      &#39;LIFEFORC&#39;,$00
-
 Name_058
-
         DB      &#39;LIONKIN3&#39;,$00
-
 Name_059
-
         DB      &#39;MARIOBRS&#39;,$00
-
 Name_060
-
         DB      &#39;MATENDOU&#39;,$00
-
 Name_061
-
         DB      &#39;METALSTM&#39;,$00
-
 Name_062
-
         DB      &#39;MIGHTYFF&#39;,$00
-
 Name_063
-
         DB      &#39;MITSUME&#39;,$00
-
 Name_064
-
         DB      &#39;MONSTER&#39;,$00
-
 Name_065
-
         DB      &#39;NEKBASKT&#39;,$00
-
 Name_066
-
         DB      &#39;NEKDODGE&#39;,$00
-
 Name_067
-
         DB      &#39;NEKHOCKY&#39;,$00
-
 Name_068
-
         DB      &#39;NEKKAKUT&#39;,$00
-
 Name_069
-
         DB      &#39;NEKKOUSH&#39;,$00
-
 Name_070
-
         DB      &#39;NEKKUNIO&#39;,$00
-
 Name_071
-
         DB      &#39;NEKMONOG&#39;,$00
-
 Name_072
-
         DB      &#39;NEKSHINK&#39;,$00
-
 Name_073
-
         DB      &#39;NEKSOCER&#39;,$00
-
 Name_074
-
         DB      &#39;NEKSOCLG&#39;,$00
-
 Name_075
-
         DB      &#39;NGAIDEN1&#39;,$00
-
 Name_076
-
         DB      &#39;NGAIDEN2&#39;,$00
-
 Name_077
-
         DB      &#39;NGAIDEN3&#39;,$00
-
 Name_078
-
         DB      &#39;NINJACAT&#39;,$00
-
 Name_079
-
         DB      &#39;NINJBROS&#39;,$00
-
 Name_080
-
         DB      &#39;OVERHORI&#39;,$00
-
 Name_081
-
         DB      &#39;PAJAMAHE&#39;,$00
-
 Name_082
-
         DB      &#39;PARODIUS&#39;,$00
-
 Name_083
-
         DB      &#39;POKEMON&#39;,$00
-
 Name_084
-
         DB      &#39;PWBLADE1&#39;,$00
-
 Name_085
-
         DB      &#39;PWBLADE2&#39;,$00
-
 Name_086
-
         DB      &#39;P O W&#39;,$00
-
 Name_087
-
         DB      &#39;ROBOCOP1&#39;,$00
-
 Name_088
-
         DB      &#39;ROBOCOP2&#39;,$00
-
 Name_089
-
         DB      &#39;ROBOCOP3&#39;,$00
-
 Name_090
-
         DB      &#39;ROBOCOP4&#39;,$00
-
 Name_091
-
         DB      &#39;ROCKBORD&#39;,$00
-
 Name_092
-
         DB      &#39;ROCKMAN1&#39;,$00
-
 Name_093
-
         DB      &#39;ROCKMAN2&#39;,$00
-
 Name_094
-
         DB      &#39;ROCKMAN3&#39;,$00
-
 Name_095
-
         DB      &#39;ROCKMAN4&#39;,$00
-
 Name_096
-
         DB      &#39;ROCKMAN5&#39;,$00
-
 Name_097
-
         DB      &#39;ROCKMAN6&#39;,$00
-
 Name_098
-
         DB      &#39;RUSHNATT&#39;,$00
-
 Name_099
-
         DB      &#39;SAIYUUK1&#39;,$00
-
 Name_100
-
         DB      &#39;SAIYUUK2&#39;,$00
-
 Name_101
-
         DB      &#39;SAIYUUKI&#39;,$00
-
 Name_102
-
         DB      &#39;SEIREIDL&#39;,$00
-
 Name_103
-
         DB      &#39;SIDEPCKT&#39;,$00
-
 Name_104
-
         DB      &#39;SILKWORM&#39;,$00
-
 Name_105
-
         DB      &#39;SILVERSU&#39;,$00
-
 Name_106
-
         DB      &#39;SNOWBROS&#39;,$00
-
 Name_107
-
         DB      &#39;SPARTAN2&#39;,$00
-
 Name_108
-
         DB      &#39;SPARTANX&#39;,$00
-
 Name_109
-
         DB      &#39;SPMARIO1&#39;,$00
-
 Name_110
-
         DB      &#39;SPMARIO2&#39;,$00
-
 Name_111
-
         DB      &#39;SPMARIO3&#39;,$00
-
 Name_112
-
         DB      &#39;SPSHINOB&#39;,$00
-
 Name_113
-
         DB      &#39;SWORDMST&#39;,$00
-
 Name_114
-
         DB      &#39;TERMINA1&#39;,$00
-
 Name_115
-
         DB      &#39;TERMINA2&#39;,$00
-
 Name_116
-
         DB      &#39;THUNCADE&#39;,$00
-
 Name_117
-
         DB      &#39;TINYTON1&#39;,$00
-
 Name_118
-
         DB      &#39;TINYTON2&#39;,$00
-
 Name_119
-
         DB      &#39;TINYTON3&#39;,$00
-
 Name_120
-
         DB      &#39;TINYTON4&#39;,$00
-
 Name_121
-
         DB      &#39;TINYTON5&#39;,$00
-
 Name_122
-
         DB      &#39;TINYTON6&#39;,$00
-
 Name_123
-
         DB      &#39;TOKKSHIR&#39;,$00
-
 Name_124
-
         DB      &#39;TOPSECRT&#39;,$00
-
 Name_125
-
         DB      &#39;TRCKFILD&#39;,$00
-
 Name_126
-
         DB      &#39;TSUBASA1&#39;,$00
-
 Name_127
-
         DB      &#39;TSUBASA2&#39;,$00
-
 Name_128
-
         DB      &#39;TURTLES1&#39;,$00
-
 Name_129
-
         DB      &#39;TURTLES2&#39;,$00
-
 Name_130
-
         DB      &#39;TURTLES3&#39;,$00
-
 Name_131
-
         DB      &#39;TURTLES4&#39;,$00
-
 Name_132
-
         DB      &#39;ULTRAMAN&#39;,$00
-
 Name_133
-
         DB      &#39;WAIWORLD&#39;,$00
-
 Name_134
-
         DB      &#39;WORLDCUP&#39;,$00
-
 Name_135
-
         DB      &#39;ZANAC M4&#39;,$00
-
 ;=============================================================================== 
-
 A_GameTbl: 
-
 			dw	Game_001
-
 			dw	Game_002
-
 			dw	Game_003
-
 			dw	Game_004
-
 			dw	Game_005
-
 			dw	Game_006
-
 			dw	Game_007
-
 			dw	Game_008
-
 			dw	Game_009
-
 			dw	Game_010
-
 			dw	Game_011
-
 			dw	Game_012
-
 			dw	Game_013
-
 			dw	Game_014
-
 			dw	Game_015
-
 			dw	Game_016
-
 			dw	Game_017
-
 			dw	Game_018
-
 			dw	Game_019
-
 			dw	Game_020
-
 			dw	Game_021
-
 			dw	Game_022
-
 			dw	Game_023
-
 			dw	Game_024
-
 			dw	Game_025
-
 			dw	Game_026
-
 			dw	Game_027
-
 			dw	Game_028
-
 			dw	Game_029
-
 			dw	Game_030
-
 			dw	Game_031
-
 			dw	Game_032
-
 			dw	Game_033
-
 			dw	Game_034
-
 			dw	Game_035
-
 			dw	Game_036
-
 			dw	Game_037
-
 			dw	Game_038
-
 			dw	Game_039
-
 			dw	Game_040
-
 			dw	Game_041
-
 			dw	Game_042
-
 			dw	Game_043
-
 			dw	Game_044
-
 			dw	Game_045
-
 			dw	Game_046
-
 			dw	Game_047
-
 			dw	Game_048
-
 			dw	Game_049
-
 			dw	Game_050
-
 			dw	Game_051
-
 			dw	Game_052
-
 			dw	Game_053
-
 			dw	Game_054
-
 			dw	Game_055
-
 			dw	Game_056
-
 			dw	Game_057
-
 			dw	Game_058
-
 			dw	Game_059
-
 			dw	Game_060
-
 			dw	Game_061
-
 			dw	Game_062
-
 			dw	Game_063
-
 			dw	Game_064
-
 			dw	Game_065
-
 			dw	Game_066
-
 			dw	Game_067
-
 			dw	Game_068
-
 			dw	Game_069
-
 			dw	Game_070
-
 			dw	Game_071
-
 			dw	Game_072
-
 			dw	Game_073
-
 			dw	Game_074
-
 			dw	Game_075
-
 			dw	Game_076
-
 			dw	Game_077
-
 			dw	Game_078
-
 			dw	Game_079
-
 			dw	Game_080
-
 			dw	Game_081
-
 			dw	Game_082
-
 			dw	Game_083
-
 			dw	Game_084
-
 			dw	Game_085
-
 			dw	Game_086
-
 			dw	Game_087
-
 			dw	Game_088
-
 			dw	Game_089
-
 			dw	Game_090
-
 			dw	Game_091
-
 			dw	Game_092
-
 			dw	Game_093
-
 			dw	Game_094
-
 			dw	Game_095
-
 			dw	Game_096
-
 			dw	Game_097
-
 			dw	Game_098
-
 			dw	Game_099
-
 			dw	Game_100
-
 			dw	Game_101
-
 			dw	Game_102
-
 			dw	Game_103
-
 			dw	Game_104
-
 			dw	Game_105
-
 			dw	Game_106
-
 			dw	Game_107
-
 			dw	Game_108
-
 			dw	Game_109
-
 			dw	Game_110
-
 			dw	Game_111
-
 			dw	Game_112
-
 			dw	Game_113
-
 			dw	Game_114
-
 			dw	Game_115
-
 			dw	Game_116
-
 			dw	Game_117
-
 			dw	Game_118
-
 			dw	Game_119
-
 			dw	Game_120
-
 			dw	Game_121
-
 			dw	Game_122
-
 			dw	Game_123
-
 			dw	Game_124
-
 			dw	Game_125
-
 			dw	Game_126
-
 			dw	Game_127
-
 			dw	Game_128
-
 			dw	Game_129
-
 			dw	Game_130
-
 			dw	Game_131
-
 			dw	Game_132
-
 			dw	Game_133
-
 			dw	Game_134
-
 			dw	Game_135
-
 ;=============================================================================== 
-
 ; 文件名:1943.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_001: 
-
-		SetupGame	$1F20040,P08,???,0,1,???
-
+		SetupGame	$1F20040,P08,$1F40040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:1944.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_002: 
-
-		SetupGame	$1F40040,P08,???,0,0,???
-
+		SetupGame	$1F40040,P08,$1F60040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:AIsland1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_003: 
-
-		SetupGame	$0180000,P02,???,4,1,???
-
+		SetupGame	$0180000,P02,$0188000,4,1,???
 ;=============================================================================== 
-
 ; 文件名:AIsland2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_004: 
-
-		SetupGame	$0A00040,P08,???,16,0,???
-
+		SetupGame	$0A00040,P08,$0A20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:AIsland3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_005: 
-
-		SetupGame	$0A40040,P08,???,16,0,???
-
+		SetupGame	$0A40040,P08,$0A60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:AIsland4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_006: 
-
-		SetupGame	$0000000,P16,???,16,0,???
-
+		SetupGame	$0000000,P16,$0040000,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Argos.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_007: 
-
-		SetupGame	$1F60040,P08,???,0,1,???
-
+		SetupGame	$1F60040,P08,$1F80040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:astyanax.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_008: 
-
-		SetupGame	$0A80040,P08,???,16,1,???
-
+		SetupGame	$0A80040,P08,$0AA0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:BadDudes.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_009: 
-
-		SetupGame	$0AC0040,P08,???,16,1,???
-
+		SetupGame	$0AC0040,P08,$0AE0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Batman1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_010: 
-
-		SetupGame	$0B00040,P08,???,16,1,???
-
+		SetupGame	$0B00040,P08,$0B20040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Batman2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_011: 
-
-		SetupGame	$04E0040,P08,???,32,1,???
-
+		SetupGame	$04E0040,P08,$0500040,32,1,???
 ;=============================================================================== 
-
 ; 文件名:Batman3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_012: 
-
-		SetupGame	$0540040,P08,???,32,0,???
-
+		SetupGame	$0540040,P08,$0560040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:BattKid1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_013: 
-
-		SetupGame	$0B40040,P16,???,0,0,???
-
+		SetupGame	$0B40040,P16,$0B80040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:BattKid2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_014: 
-
-		SetupGame	$0080040,P32,???,0,0,???
-
+		SetupGame	$0080040,P32,$0100040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Bayoubil.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_015: 
-
-		SetupGame	$0B80040,P08,???,16,1,???
-
+		SetupGame	$0B80040,P08,$0BA0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:BuckyOHa.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_016: 
-
-		SetupGame	$0BC0040,P08,???,16,0,???
-
+		SetupGame	$0BC0040,P08,$0BE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:CaptAmer.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_017: 
-
-		SetupGame	$0C00040,P08,???,16,0,???
-
+		SetupGame	$0C00040,P08,$0C20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Castlev1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_018: 
-
-		SetupGame	$1F80040,P08,???,0,0,???
-
+		SetupGame	$1F80040,P08,$1FA0040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Castlev2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_019: 
-
-		SetupGame	$0C40040,P08,???,16,0,???
-
+		SetupGame	$0C40040,P08,$0C60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Chipdal1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_020: 
-
-		SetupGame	$0C80040,P08,???,16,0,???
-
+		SetupGame	$0C80040,P08,$0CA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Chipdal2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_021: 
-
-		SetupGame	$0CC0040,P08,???,16,0,???
-
+		SetupGame	$0CC0040,P08,$0CE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Chipdal3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_022: 
-
-		SetupGame	$0D00040,P08,???,16,0,???
-
+		SetupGame	$0D00040,P08,$0D20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:CodViper.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_023: 
-
-		SetupGame	$0D40040,P08,???,16,0,???
-
+		SetupGame	$0D40040,P08,$0D60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Contra1J.NES	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_024: 
-
-		SetupGame	$0D80040,P08,???,16,1,???
-
+		SetupGame	$0D80040,P08,$0DA0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Contra2J.NES	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_025: 
-
-		SetupGame	$0DC0040,P08,???,16,1,???
-
+		SetupGame	$0DC0040,P08,$0DE0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Contra_F.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_026: 
-
-		SetupGame	$0E00040,P08,???,16,0,???
-
+		SetupGame	$0E00040,P08,$0E20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:CrosFire.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_027: 
-
-		SetupGame	$0E40040,P08,???,16,0,???
-
+		SetupGame	$0E40040,P08,$0E60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Crusader.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_028: 
-
-		SetupGame	$1FA0040,P08,???,0,0,???
-
+		SetupGame	$1FA0040,P08,$1FC0040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:DarkDuck.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_029: 
-
-		SetupGame	$0E80040,P08,???,16,1,???
-
+		SetupGame	$0E80040,P08,$0EA0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:DbDragn1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_030: 
-
-		SetupGame	$0EC0040,P08,???,16,0,???
-
+		SetupGame	$0EC0040,P08,$0EE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:DbDragn2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_031: 
-
-		SetupGame	$0F00040,P08,???,16,0,???
-
+		SetupGame	$0F00040,P08,$0F20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:DbDragn3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_032: 
-
-		SetupGame	$0F40040,P08,???,16,0,???
-
+		SetupGame	$0F40040,P08,$0F60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:DbDragn4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_033: 
-
-		SetupGame	$0F80040,P08,???,16,0,???
-
+		SetupGame	$0F80040,P08,$0FA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:DragFigh.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_034: 
-
-		SetupGame	$0FC0040,P08,???,16,1,???
-
+		SetupGame	$0FC0040,P08,$0FE0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Dr_Mario.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_035: 
-
-		SetupGame	$02D0000,P02,???,3,1,???
-
+		SetupGame	$02D0000,P02,$02D8000,3,1,???
 ;=============================================================================== 
-
 ; 文件名:Felixcat.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_036: 
-
-		SetupGame	$1000040,P08,???,16,0,???
-
+		SetupGame	$1000040,P08,$1020040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Flintst1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_037: 
-
-		SetupGame	$05A0040,P08,???,32,0,???
-
+		SetupGame	$05A0040,P08,$05C0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Flintst2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_038: 
-
-		SetupGame	$0600040,P08,???,32,0,???
-
+		SetupGame	$0600040,P08,$0620040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:FMission.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_039: 
-
-		SetupGame	$1040040,P08,???,16,1,???
-
+		SetupGame	$1040040,P08,$1060040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:GoldMedl.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_040: 
-
-		SetupGame	$1080040,P08,???,16,0,???
-
+		SetupGame	$1080040,P08,$10A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Gremlins.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_041: 
-
-		SetupGame	$0660040,P08,???,32,0,???
-
+		SetupGame	$0660040,P08,$0680040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Guerrill.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_042: 
-
-		SetupGame	$10C0040,P08,???,16,0,???
-
+		SetupGame	$10C0040,P08,$10E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Gunsmoke.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_043: 
-
-		SetupGame	$1FC0040,P08,???,0,1,???
-
+		SetupGame	$1FC0040,P08,$1FE0040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Gun_Dec.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_044: 
-
-		SetupGame	$1100040,P08,???,16,1,???
-
+		SetupGame	$1100040,P08,$1120040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:G_I_Joe1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_045: 
-
-		SetupGame	$06C0040,P08,???,32,0,???
-
+		SetupGame	$06C0040,P08,$06E0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:G_I_Joe2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_046: 
-
-		SetupGame	$0720040,P08,???,32,0,???
-
+		SetupGame	$0720040,P08,$0740040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:HeavyBar.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_047: 
-
-		SetupGame	$1140040,P08,???,16,0,???
-
+		SetupGame	$1140040,P08,$1160040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Ikari_1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_048: 
-
-		SetupGame	$1FE0040,P08,???,0,0,???
-
+		SetupGame	$1FE0040,P08,$2000040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Ikari_2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_049: 
-
-		SetupGame	$1180040,P16,???,0,0,???
-
+		SetupGame	$1180040,P16,$11C0040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Ikari_3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_050: 
-
-		SetupGame	$11C0040,P08,???,16,1,???
-
+		SetupGame	$11C0040,P08,$11E0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Jackal.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_051: 
-
-		SetupGame	$2000040,P08,???,0,1,???
-
+		SetupGame	$2000040,P08,$2020040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Jackchan.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_052: 
-
-		SetupGame	$1200040,P08,???,16,0,???
-
+		SetupGame	$1200040,P08,$1220040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Jurassic.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_053: 
-
-		SetupGame	$1240040,P08,???,16,0,???
-
+		SetupGame	$1240040,P08,$1260040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Kage.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_054: 
-
-		SetupGame	$1280040,P08,???,16,0,???
-
+		SetupGame	$1280040,P08,$12A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:KickMast.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_055: 
-
-		SetupGame	$12C0040,P08,???,16,0,???
-
+		SetupGame	$12C0040,P08,$12E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:LegWings.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_056: 
-
-		SetupGame	$2020040,P08,???,0,1,???
-
+		SetupGame	$2020040,P08,$2040040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:LifeForc.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_057: 
-
-		SetupGame	$2040040,P08,???,0,1,???
-
+		SetupGame	$2040040,P08,$2060040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:LionKin3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_058: 
-
-		SetupGame	$0100040,P16,???,32,0,???
-
+		SetupGame	$0100040,P16,$0140040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:MarioBrs.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_059: 
-
-		SetupGame	$218A040,P02,???,1,1,???
-
+		SetupGame	$218A040,P02,$2192040,1,1,???
 ;=============================================================================== 
-
 ; 文件名:Matendou.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_060: 
-
-		SetupGame	$1300040,P08,???,16,0,???
-
+		SetupGame	$1300040,P08,$1320040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:MetalStm.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_061: 
-
-		SetupGame	$0780040,P08,???,32,0,???
-
+		SetupGame	$0780040,P08,$07A0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Mightyff.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_062: 
-
-		SetupGame	$1340040,P08,???,16,0,???
-
+		SetupGame	$1340040,P08,$1360040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Mitsume.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_063: 
-
-		SetupGame	$1380040,P08,???,16,0,???
-
+		SetupGame	$1380040,P08,$13A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Monster.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_064: 
-
-		SetupGame	$13C0040,P08,???,16,0,???
-
+		SetupGame	$13C0040,P08,$13E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekBaskt.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_065: 
-
-		SetupGame	$1400040,P08,???,16,0,???
-
+		SetupGame	$1400040,P08,$1420040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekDodge.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_066: 
-
-		SetupGame	$1440040,P08,???,16,1,???
-
+		SetupGame	$1440040,P08,$1460040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:NekHocky.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_067: 
-
-		SetupGame	$1480040,P08,???,16,0,???
-
+		SetupGame	$1480040,P08,$14A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekKakut.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_068: 
-
-		SetupGame	$14C0040,P08,???,16,0,???
-
+		SetupGame	$14C0040,P08,$14E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekKoush.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_069: 
-
-		SetupGame	$1500040,P08,???,16,1,???
-
+		SetupGame	$1500040,P08,$1520040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:NekKunio.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_070: 
-
-		SetupGame	$2060040,P08,???,0,1,???
-
+		SetupGame	$2060040,P08,$2080040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:NekMonog.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_071: 
-
-		SetupGame	$1540040,P08,???,16,0,???
-
+		SetupGame	$1540040,P08,$1560040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekShink.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_072: 
-
-		SetupGame	$1580040,P08,???,16,1,???
-
+		SetupGame	$1580040,P08,$15A0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:NekSocer.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_073: 
-
-		SetupGame	$15C0040,P08,???,16,0,???
-
+		SetupGame	$15C0040,P08,$15E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NekSocLg.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_074: 
-
-		SetupGame	$1600040,P08,???,16,0,???
-
+		SetupGame	$1600040,P08,$1620040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NGaiden1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_075: 
-
-		SetupGame	$1640040,P08,???,16,0,???
-
+		SetupGame	$1640040,P08,$1660040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NGaiden2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_076: 
-
-		SetupGame	$1680040,P08,???,16,0,???
-
+		SetupGame	$1680040,P08,$16A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NGaiden3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_077: 
-
-		SetupGame	$16C0040,P08,???,16,0,???
-
+		SetupGame	$16C0040,P08,$16E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NinjaCat.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_078: 
-
-		SetupGame	$1700040,P08,???,16,0,???
-
+		SetupGame	$1700040,P08,$1720040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:NinjBros.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_079: 
-
-		SetupGame	$1740040,P08,???,16,0,???
-
+		SetupGame	$1740040,P08,$1760040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:OverHori.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_080: 
-
-		SetupGame	$1780040,P08,???,16,1,???
-
+		SetupGame	$1780040,P08,$17A0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:PajamaHe.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_081: 
-
-		SetupGame	$17C0040,P08,???,16,0,???
-
+		SetupGame	$17C0040,P08,$17E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Parodius.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_082: 
-
-		SetupGame	$1800040,P08,???,16,1,???
-
+		SetupGame	$1800040,P08,$1820040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Pokemon.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_083: 
-
-		SetupGame	$1840040,P08,???,16,0,???
-
+		SetupGame	$1840040,P08,$1860040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:PwBlade1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_084: 
-
-		SetupGame	$1880040,P08,???,16,0,???
-
+		SetupGame	$1880040,P08,$18A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:PwBlade2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_085: 
-
-		SetupGame	$18C0040,P08,???,16,0,???
-
+		SetupGame	$18C0040,P08,$18E0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:P_O_W.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_086: 
-
-		SetupGame	$1900040,P08,???,16,1,???
-
+		SetupGame	$1900040,P08,$1920040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Robocop1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_087: 
-
-		SetupGame	$1940040,P08,???,16,0,???
-
+		SetupGame	$1940040,P08,$1960040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Robocop2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_088: 
-
-		SetupGame	$1980040,P08,???,16,1,???
-
+		SetupGame	$1980040,P08,$19A0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Robocop3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_089: 
-
-		SetupGame	$19C0040,P08,???,16,1,???
-
+		SetupGame	$19C0040,P08,$19E0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Robocop4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_090: 
-
-		SetupGame	$1A00040,P08,???,16,1,???
-
+		SetupGame	$1A00040,P08,$1A20040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:RockBord.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_091: 
-
-		SetupGame	$1A40040,P16,???,0,1,???
-
+		SetupGame	$1A40040,P16,$1A80040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Rockman1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_092: 
-
-		SetupGame	$2080040,P08,???,0,1,???
-
+		SetupGame	$2080040,P08,$20A0040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Rockman2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_093: 
-
-		SetupGame	$1A80040,P16,???,0,1,???
-
+		SetupGame	$1A80040,P16,$1AC0040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Rockman3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_094: 
-
-		SetupGame	$07E0040,P16,???,16,0,???
-
+		SetupGame	$07E0040,P16,$0820040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Rockman4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_095: 
-
-		SetupGame	$0180040,P32,???,0,0,???
-
+		SetupGame	$0180040,P32,$0200040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Rockman5.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_096: 
-
-		SetupGame	$0200040,P16,???,32,0,???
-
+		SetupGame	$0200040,P16,$0240040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Rockman6.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_097: 
-
-		SetupGame	$0280040,P32,???,0,0,???
-
+		SetupGame	$0280040,P32,$0300040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Rushnatt.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_098: 
-
-		SetupGame	$20A0040,P08,???,0,1,???
-
+		SetupGame	$20A0040,P08,$20C0040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Saiyuuk1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_099: 
-
-		SetupGame	$20C0040,P08,???,0,1,???
-
+		SetupGame	$20C0040,P08,$20E0040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:Saiyuuk2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_100: 
-
-		SetupGame	$1AC0040,P08,???,16,0,???
-
+		SetupGame	$1AC0040,P08,$1AE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Saiyuuki.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_101: 
-
-		SetupGame	$2170040,P02,???,4,1,???
-
+		SetupGame	$2170040,P02,$2178040,4,1,???
 ;=============================================================================== 
-
 ; 文件名:SeireiDL.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_102: 
-
-		SetupGame	$0840040,P16,???,16,0,???
-
+		SetupGame	$0840040,P16,$0880040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:SidePckt.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_103: 
-
-		SetupGame	$20E0040,P08,???,0,0,???
-
+		SetupGame	$20E0040,P08,$2100040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:SilkWorm.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_104: 
-
-		SetupGame	$1B00040,P08,???,16,0,???
-
+		SetupGame	$1B00040,P08,$1B20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:SilverSu.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_105: 
-
-		SetupGame	$08A0040,P08,???,32,0,???
-
+		SetupGame	$08A0040,P08,$08C0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:SnowBros.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_106: 
-
-		SetupGame	$1B40040,P08,???,16,1,???
-
+		SetupGame	$1B40040,P08,$1B60040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Spartan2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_107: 
-
-		SetupGame	$1B80040,P08,???,16,0,???
-
+		SetupGame	$1B80040,P08,$1BA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:SpartanX.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_108: 
-
-		SetupGame	$2194040,P02,???,1,1,???
-
+		SetupGame	$2194040,P02,$219C040,1,1,???
 ;=============================================================================== 
-
 ; 文件名:SpMario1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_109: 
-
-		SetupGame	$219E040,P02,???,1,1,???
-
+		SetupGame	$219E040,P02,$21A6040,1,1,???
 ;=============================================================================== 
-
 ; 文件名:SpMario2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_110: 
-
-		SetupGame	$1BC0040,P08,???,16,0,???
-
+		SetupGame	$1BC0040,P08,$1BE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:SpMario3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_111: 
-
-		SetupGame	$0900040,P16,???,16,0,???
-
+		SetupGame	$0900040,P16,$0940040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:SpShinob.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_112: 
-
-		SetupGame	$0300040,P16,???,32,0,???
-
+		SetupGame	$0300040,P16,$0340040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:SwordMst.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_113: 
-
-		SetupGame	$1C00040,P08,???,16,0,???
-
+		SetupGame	$1C00040,P08,$1C20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Termina1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_114: 
-
-		SetupGame	$1C40040,P08,???,16,0,???
-
+		SetupGame	$1C40040,P08,$1C60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Termina2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_115: 
-
-		SetupGame	$1C80040,P08,???,16,0,???
-
+		SetupGame	$1C80040,P08,$1CA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Thuncade.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_116: 
-
-		SetupGame	$2100040,P08,???,0,1,???
-
+		SetupGame	$2100040,P08,$2120040,0,1,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_117: 
-
-		SetupGame	$1CC0040,P08,???,16,1,???
-
+		SetupGame	$1CC0040,P08,$1CE0040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_118: 
-
-		SetupGame	$1D00040,P08,???,16,0,???
-
+		SetupGame	$1D00040,P08,$1D20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_119: 
-
-		SetupGame	$2120040,P04,???,8,1,???
-
+		SetupGame	$2120040,P04,$2130040,8,1,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_120: 
-
-		SetupGame	$1D40040,P08,???,16,0,???
-
+		SetupGame	$1D40040,P08,$1D60040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon5.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_121: 
-
-		SetupGame	$1D80040,P08,???,16,0,???
-
+		SetupGame	$1D80040,P08,$1DA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:TinyTon6.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_122: 
-
-		SetupGame	$0380040,P16,???,32,0,???
-
+		SetupGame	$0380040,P16,$03C0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:TokkShir.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_123: 
-
-		SetupGame	$1DC0040,P08,???,16,0,???
-
+		SetupGame	$1DC0040,P08,$1DE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:TopSecrt.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_124: 
-
-		SetupGame	$1E00040,P16,???,0,0,???
-
+		SetupGame	$1E00040,P16,$1E40040,0,0,???
 ;=============================================================================== 
-
 ; 文件名:Trckfild.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_125: 
-
-		SetupGame	$2180040,P02,???,4,1,???
-
+		SetupGame	$2180040,P02,$2188040,4,1,???
 ;=============================================================================== 
-
 ; 文件名:Tsubasa1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_126: 
-
-		SetupGame	$1E40040,P08,???,16,1,???
-
+		SetupGame	$1E40040,P08,$1E60040,16,1,???
 ;=============================================================================== 
-
 ; 文件名:Tsubasa2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_127: 
-
-		SetupGame	$0960040,P16,???,16,0,???
-
+		SetupGame	$0960040,P16,$09A0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Turtles1.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_128: 
-
-		SetupGame	$1E80040,P08,???,16,0,???
-
+		SetupGame	$1E80040,P08,$1EA0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Turtles2.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_129: 
-
-		SetupGame	$0400040,P16,???,32,0,???
-
+		SetupGame	$0400040,P16,$0440040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Turtles3.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_130: 
-
-		SetupGame	$0480040,P16,???,32,0,???
-
+		SetupGame	$0480040,P16,$04C0040,32,0,???
 ;=============================================================================== 
-
 ; 文件名:Turtles4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_131: 
-
-		SetupGame	$1EC0040,P08,???,16,0,???
-
+		SetupGame	$1EC0040,P08,$1EE0040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Ultraman.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_132: 
-
-		SetupGame	$09C0040,P08,???,32,1,???
-
+		SetupGame	$09C0040,P08,$09E0040,32,1,???
 ;=============================================================================== 
-
 ; 文件名:WaiWorld.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_133: 
-
-		SetupGame	$1F00040,P08,???,16,0,???
-
+		SetupGame	$1F00040,P08,$1F20040,16,0,???
 ;=============================================================================== 
-
 ; 文件名:Worldcup.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_134: 
-
-		SetupGame	$2140040,P04,???,8,1,???
-
+		SetupGame	$2140040,P04,$2150040,8,1,???
 ;=============================================================================== 
-
 ; 文件名:Zanac_m4.nes	 中文名:???	 版本:???	 有无预置:??? 
-
 ;------------------------------------------------------------------------------- 
-
 Game_135: 
-
-		SetupGame	$2160040,P08,???,0,0,???
-
+		SetupGame	$2160040,P08,$2180040,0,0,???
 </pre>
 </div>
 </div>
