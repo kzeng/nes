@@ -1,0 +1,34 @@
+
+1、问题
+1.0 ROM的建立就是要对F_Reset.asm, Romfile.idx 文件进行汇编编译、连接和二进制文件组合。
+
+1.1 手工填写F_Reset.asm, Romfile.idx 文件是枯燥易错且效率低下的。
+
+2.1 通过自动化生成F_Reset.asm, Romfile.idx 文件可以弥补手工填写文件的不足。
+
+
+2、思路与实现
+2.0 NES文件有固定的头部格式信息。
+
+2.1 F_Reset.asm, Romfile.idx 文件也有固定格式，可充当目标文件母板，易于编程实现。
+
+
+3、代码清单
+3.0 自动化脚本使用Python3.6 编写，使用到openpyxl库
+
+3.1 游戏库清单文件（Nes-Games-List.XLSX）
+可以手工填写这个文件，也可通过自动化脚本自动生成清单文件。
+运行自动化脚本create_game_list.py 会自动分析./128in1 目录下所有nes 文件，提取相关信息填写到游戏库清单文件中。
+游戏库清单文件提供了后续自动化脚本所需要的一些信息，必须提前准备好。
+
+<create_game_list.PNG>
+
+3.2 自动生成索引文件 (create_idx_file.py)
+create_idx_file.py 会自动生成 Romfile.idx.
+<create_idx_file.PNG>
+
+
+3.3 生成F_Reset.asm 中的代码 (create_F_Reset.py)
+create_F_Reset.py 会自动生成 F_Reset_Section.asm 代码片段， 可粘贴复制到F_Reset.asm 文件中。
+
+<create_F_Reset.PNG>
